@@ -1,10 +1,10 @@
-
 import type { Metadata } from "next";
 import { Inter, Outfit } from "next/font/google";
+import NextTopLoader from "nextjs-toploader";
 
-import "@/styles/globals.css"
-
-export const  inter = Inter({ subsets: ["latin"] });
+import "@/styles/globals.css";
+import { Suspense } from "react";
+export const inter = Inter({ subsets: ["latin"] });
 const outfit = Outfit({
 	subsets: ["latin"],
 	weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
@@ -15,6 +15,7 @@ export const metadata: Metadata = {
 	description: "frontend ui for ....",
 };
 
+
 export default function RootLayout({
 	children,
 }: {
@@ -22,7 +23,10 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
-			<body className={outfit.className}>{children}</body>
+			<body className={outfit.className}>
+				<NextTopLoader />
+				{children}
+			</body>
 		</html>
 	);
 }

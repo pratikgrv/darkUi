@@ -6,12 +6,12 @@ import Mintinfo from "@/components/Mintinfo";
 import InfoTab from "@/components/InfoTab";
 const MintInfo = async ({ params: { slug } }: { params: { slug: string } }) => {
 	const data = await CardInfo(slug);
-	console.log(data[0].imageUrl);
+	// console.log(data[0].imageUrl);
 
 	if (data.length === 0) {
 		return (
-			<div className="">
-				<h1>Not Found</h1>
+			<div className=" w-[100vw] h-[100vh] flex justify-center items-center">
+				<h1>Not Found.....</h1>
 			</div>
 		);
 	}

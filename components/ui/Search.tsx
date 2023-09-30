@@ -2,23 +2,36 @@
 import React from "react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-const Search = () => {
-	const [searchInput, setSearchInput] = useState("");
+import useDebounce from "@/libs/useDebounce";
+const Search = ({ filter, setFilter }) => {
+	if (!filter) {
+		filter={}
+	}
+	if (filter) {
+		// console.log("data",filter)
 
+	}
+	
 	const router = useRouter();
 	const handleChange = (e: any) => {
-		setSearchInput(e.target.value);
+		setFilter({
+			...filter,
+			search: e.target.value,
+			page:1
+		});
+		
 	};
+// const	db=useDebounce(handleChange,500)
 
-	const handleKeyUp = (e: any) => {
-		if (e.key === "Enter") {
-			const validInput = searchInput.toLowerCase();
-			router.push(`/search/${validInput}`);
-		}
-	};
+	// const handleKeyUp = (e: any) => {
+	// 	if (e.key === "Enter") {
+	// 		const validInput = filter.toLowerCase();
+	// 		router.push(`/search/${validInput}`);
+	// 	}
+	// };
 
 	return (
-		<div className="search-bar flex rounded-full text-gray-50 tracking-wide overflow-hidden h-10">
+		<div className="search-bar flex rounded-full text-gray-50 tracking-wide overflow-hidden h-10 w-[25rem]">
 			<div className="search-icon flex items-center px-3">
 				<svg
 					width="18px"
@@ -45,14 +58,14 @@ const Search = () => {
 					</g>
 				</svg>
 			</div>
-			<div className="input-div flex items-center justify-center relative sm:min-w-[17rem]  h-full min-w-[14rem]">
+			<div className="input-div flex items-center justify-center relative sm:min-w-[22rem]  h-full min-w-[24rem]">
 				<input
 					className="border-none outline-none absolute top-0 w-full h-full bg-transparent text-sm "
 					type="text"
 					placeholder="Search here"
 					onChange={handleChange}
-					value={searchInput}
-					onKeyUp={handleKeyUp}
+					value={filter.search?filter.search:''}
+					// onKeyUp={handleKeyUp}
 				/>
 			</div>
 		</div>

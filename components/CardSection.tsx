@@ -1,8 +1,8 @@
 import React from "react";
-import CardCollection from "./CardCollection";
+import CardCollection from "../app/(routes)/mints/components/CardCollection";
 import Link from "next/link";
 import Button from "./ui/Button";
-const CardSection = ({ name,desc, children }) => {
+const CardSection = ({ name, desc, children }) => {
 	return (
 		<div className="flex flex-col mx-5 md:p-5 my-4">
 			<div className="flex justify-between items-center md:p-4">

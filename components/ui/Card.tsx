@@ -19,8 +19,8 @@ const Card = ({ data }) => {
 
 	return (
 		<Link href={`/mints/${slugName}`}>
-			<div className="card h-auto bg-slate-600 m-2 rounded-xl  relative ">
-				<div className="card_background h-[140px] md:h-[180px] relative w-[95%] m-auto mt-3 rounded-lg overflow-hidden ">
+			<div className="card h-auto bg-slate-600 m-2 rounded-[16px]  relative ">
+				<div className="card_background h-[140px] md:h-[180px] relative w-[95%] m-auto mt-2.5 rounded-lg overflow-hidden ">
 					{/* <div className="bg-gradient-to-r from-indigo-500 absolute w-full h-full z-10 gradient_card"></div> */}
 					<Image
 						className="object-fill"

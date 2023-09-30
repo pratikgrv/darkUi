@@ -230,7 +230,7 @@ body {
 
 .card:hover {
 	border: 1px solid rgba(255, 255, 255, 0.5);
-	transform: scale(1.02);
+	transform: scale(1.01);
 	/* box-shadow: inset 0 2px 2px #525154, -2px -1px 15px rgba(0, 0, 0, .64); */
 }
 
@@ -240,7 +240,12 @@ body {
 .roundex{
 	border-radius: 9999px;
 }
-
+.accordion-content{
+	opacity: 1;
+	height: 100%;
+	padding: 24px;
+	transition: opacity .5s ease-in-out;
+}
 /* .container {
 	display: flex;
 	align-items: center;
@@ -540,4 +545,8 @@ border-bottom: 1px solid var(--btn-border);
 .grid_items{
 	margin: auto 0;
 
+}
+/* minf desc */
+.balance{
+	text-wrap: balance;
 }

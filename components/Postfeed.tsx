@@ -4,8 +4,8 @@ import PrimaryButton from "./ui/PrimaryButton";
 
 const PostFeed = () => {
 	return (
-		<div className="grid grid-cols-1 md:mt-20 mt-12 md:grid-cols-3 gap-2 md:mx-11 bg-slate-500 rounded-lg">
-			<div className="relative col-span-2 rounded overflow-hidden  aspect-[16/8] ">
+		<div className="grid grid-cols-1 md:mt-20 mt-12 md:grid-cols-3 gap-2 md:mx-11 bg-slate-500 rounded-lg px-[10rem]">
+			<div className="relative col-span-2 rounded overflow-hidden  w-[34rem] aspect-square">
 				<Image
 					className="object-cover items-center "
 					src={

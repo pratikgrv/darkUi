@@ -4,7 +4,7 @@ import getCalander from "@/actions/getSearch";
 import Header from "@/components/Header";
 import PostFeed from "@/components/Postfeed";
 import FeedSeperator from "@/components/FeedSeperator";
-import CardCollection from "@/components/CardCollection";
+import CardCollection from "@/app/(routes)/mints/components/CardCollection";
 import CardSection from "@/components/CardSection";
 import Footer from "@/components/ui/Footer";
 import Accordian from "@/components/Accordian";
@@ -24,18 +24,14 @@ const HomePage = async () => {
 				name={"🔥Trending Mints"}
 				desc={" Most awaited mints,might be something big"}
 			>
-				<CardCollection
-					type={true}
-				/>
+				<CardCollection type={true} />
 			</CardSection>
 			<CardSection name={"🆕Recent Released"} desc={" New projects"}>
-				<CardCollection
-					type={false}
-				/>
+				<CardCollection type={false} />
 			</CardSection>
 			<Accordian />
-			
-			<Footer/>
+
+			<Footer />
 		</div>
 	);
 };

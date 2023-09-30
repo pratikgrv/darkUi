@@ -4,7 +4,7 @@ const CardInfo = async (query: any) => {
 	
 
 	try {
-		console.log(URL);
+		// console.log(URL);
 		const res = await fetch(URL, {
 			method: "GET",
 

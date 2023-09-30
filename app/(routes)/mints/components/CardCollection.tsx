@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "./ui/Card";
+import Card from "../../../../components/ui/Card";
 import getCalander from "@/actions/getSearch";
 
 const CardCollection = async ({ type }) => {
@@ -16,7 +16,7 @@ const CardCollection = async ({ type }) => {
 		Featured: "true",
 	});
 
-	console.log(calanderData);
+	// console.log(calanderData);
 	return (
 		<div className="cards grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 ">
 			{calanderData.map((item: any) => (

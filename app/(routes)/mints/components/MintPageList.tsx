@@ -1,11 +1,15 @@
-'use client'
+"use client";
 import React, { useEffect, useState } from "react";
-import Card from "./ui/Card";
+
 import getCalendar from "@/actions/getSearch";
+import TableCollection from "./TableCollection";
+import TableSection from "./TableSection";
+import { usePathname, useRouter } from "next/navigation";
 
 const MintPageList = ({ type }) => {
 	const [calendarData, setCalendarData] = useState([]);
-
+	const router = useRouter();
+	const pathname = usePathname();
 	useEffect(() => {
 		const fetchData = async () => {
 			let data = [];
@@ -17,18 +21,23 @@ const MintPageList = ({ type }) => {
 			} else if (type === "new") {
 				data = await getCalendar({ Popular: "false" });
 			}
-console.log(data)
-			setCalendarData(data);
+			// console.log(data);
+			// setCalendarData(data);
 		};
 
 		fetchData();
 	}, [type]);
-
+	// console.log(router);
+	// console.log(pathname);
 	return (
-		<div className="cards grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 pt-3">
-			{calendarData.map((item) => (
-				<Card data={item} key={item._id} />
-			))}
+		<div>
+			<TableSection>
+				{calendarData.map((item, index) => (
+					// <Card data={item} key={item._id} />
+
+					<TableCollection data={item} key={item._id} num={index} />
+				))}
+			</TableSection>
 		</div>
 	);
 };

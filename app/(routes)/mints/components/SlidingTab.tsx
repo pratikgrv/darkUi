@@ -1,8 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import Link from "next/link";
-import CardCollection from "../CardCollection";
-import MintPageList from "../MintPageList";
+
+import MintPageList from "./MintPageList";
 const SlidingTab = () => {
 	const [activeTab, setActiveTab] = useState("all");
 
@@ -12,7 +11,7 @@ const SlidingTab = () => {
 		setActiveTab(event.target.id);
 	};
 
-	console.log(activeTab);
+	// console.log(activeTab);
 
 	return (
 		<div className="my-3">
@@ -54,7 +53,7 @@ const SlidingTab = () => {
 				</nav>
 			</div>
 			{/* <CardCollection type={true} /> */}
-			<MintPageList type={activeTab}/>
+			<MintPageList type={activeTab} />
 		</div>
 	);
 };

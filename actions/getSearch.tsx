@@ -8,14 +8,15 @@ const getCalander = async (query: any) => {
 			popular: query.Popular,
 			featured: query.Featured,
 			search: query.search,
+			sort: query.sort,
+			page:query.page
 		},
 	});
 
 	try {
-		console.log(url);
+		// console.log(url);
 		const res = await fetch(url, {
 			method: "GET",
-			
 			cache: "no-store",
 		});
 

@@ -70,3 +70,25 @@ function Accordion() {
 }
 
 export default Accordion;
+	// <div
+	// 			className="accordion-header flex justify-between w-[95%]  mx-auto p-4 cardx "
+	// 			onClick={() => toggleAccordion("first")}
+	// 		>
+	// 			<div className="md:text-2xl  font-semibold text-center text-sm">
+	// 				What is exprorrr. all about?
+	// 			</div>
+	// 			<button>{openSection === "first" ? "-" : "+"}</button>
+	// 		</div>
+
+	// 		<div
+	// 			className={` w-[95%] h-0 mx-auto opacity-0  ${
+	// 				openSection === "first" && "  accordion-content"
+	// 			}`}
+	// 		>
+	// 			<p>
+	// 				{} Lorem ipsum dolor sit, amet consectetur adipisicing elit. Enim id
+	// 				maiores facilis consectetur soluta aspernatur necessitatibus quod
+	// 				optio est qui? Suscipit atque consectetur minima quod? Alias, rerum!
+	// 				Expedita, aut distinctio.
+	// 			</p>
+	// 		</div>
