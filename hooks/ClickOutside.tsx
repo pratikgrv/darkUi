@@ -2,21 +2,21 @@
 
 import React, { useEffect, useRef } from 'react';
 
-const useClickOutside = (onClickOutside) => {
+const useClickOutside = (onClickOutside:any) => {
 
 
 
 
   
-  const ref = useRef(null);
+  const ref:any = useRef(null);
 
-  const handleClickOutside = (event) => {
+  const handleClickOutside = (event:any) => {
     if (ref.current && !ref.current.contains(event.target)) {
       console.log("inside hook")
       onClickOutside && onClickOutside();
     }
   };
- const handleDocumentClick = (event) => {
+ const handleDocumentClick = (event:any) => {
       handleClickOutside(event);
     };
   useEffect(() => {
