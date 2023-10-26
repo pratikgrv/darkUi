@@ -12,7 +12,7 @@ const detail = [
 	"Populrity",
 	"Social",
 ];
-const TableSection = ({ filter, setFilter }) => {
+const TableSection = ({ filter, setFilter }:any) => {
 	
 
 	const handleClick = (action: string) => {

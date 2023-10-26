@@ -18,7 +18,7 @@ const MobileNav = () => {
 	const clickOut = () => {
 		document.body.classList.remove("unscrollable");
 	};
-	const ref = useClickOutside(() => {
+	const ref:any = useClickOutside(() => {
 		// Handle click outside logic here
 		setSearchToggle(false);
 		setMenu(false);

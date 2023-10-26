@@ -9,7 +9,7 @@ import useDebounce from "@/libs/useDebounce";
 import { useQuery } from "react-query";
 import { useRouter, useSearchParams } from "next/navigation";
 
-const ClientFilter = ({ initialData }) => {
+const ClientFilter = ({ initialData }:any) => {
 	const [datas, setDatas] = useState(initialData);
 	const [filter, setFilter] = useState({
 		search: "",
@@ -21,7 +21,7 @@ const ClientFilter = ({ initialData }) => {
 	const { isLoading, error, data } = useQuery({
 		queryKey: ["repoData", { filter }],
 		queryFn: async () => {
-			const arr = {};
+			const arr:any = {};
 			if (filter.search) {
 				arr.search = filter.search;
 			}
@@ -33,7 +33,7 @@ const ClientFilter = ({ initialData }) => {
 			}
 			const filteredData = await getCalendar(arr);
 			console.log(arr);
-			setDatas( filter.page===1 ? filteredData : ((prev)=>[
+			setDatas( filter.page===1 ? filteredData : ((prev:any)=>[
 				...prev,
 	 			...filteredData,
 	 		]));
@@ -104,7 +104,7 @@ const ClientFilter = ({ initialData }) => {
 		<div className="md:w-[90%] mx-auto overflow-x-auto  ">
 			<Search filter={filter} setFilter={setFilter} />
 			<TableSection filter={filter} setFilter={setFilter} />
-			{datas.map((item, index) => (
+			{datas.map((item:any, index:any) => (
 				<TableCollection data={item} key={item._id} num={index} />
 			))}
 			{/* {data ? (

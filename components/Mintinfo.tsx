@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Mintinfo = ({item}) => {
+const Mintinfo = ({item}:any) => {
   return (
 		<div>
 			<div className="flex mt-5 flex-wrap card rounded-xl w-full ">

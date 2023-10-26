@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 const desc =
 	"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laborum ab consectetur officiis adipisci incidunt. Consequuntur error unde aut voluptate! Quae tempore blanditiis molestias repellat! Necessitatibus harum quasi debitis sed autem.";
-const SliderCard = ({ data }) => {
+const SliderCard = ({ data }:any) => {
 	const {
 		slugName,
 		collectionDesc,

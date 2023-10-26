@@ -11,7 +11,7 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { useRerender } from "use-is-rerender";
 
-const SlideSection = ({ data }) => {
+const SlideSection = ({ data }:any) => {
 	useRerender();
 	const swiper = useSwiper();
 	return (

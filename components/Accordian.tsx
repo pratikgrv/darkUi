@@ -4,7 +4,7 @@ import React, { useState } from "react";
 function Accordion() {
 	const [openSection, setOpenSection] = useState(null);
 
-	const toggleAccordion = (section) => {
+	const toggleAccordion = (section:any) => {
 		if (openSection === section) {
 			// Clicking on the currently open section should close it
 			setOpenSection(null);

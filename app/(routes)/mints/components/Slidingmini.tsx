@@ -1,6 +1,6 @@
 import React from 'react'
 
-const SlidingMiniTab = ({ activeTab, handleTabChange }) => {
+const SlidingMiniTab = ({ activeTab, handleTabChange }:any) => {
 	return (
 		<div>
 			<div className="wrapper ">

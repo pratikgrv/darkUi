@@ -6,7 +6,7 @@ import TableCollection from "./TableCollection";
 import TableSection from "./TableSection";
 import { usePathname, useRouter } from "next/navigation";
 
-const MintPageList = ({ type }) => {
+const MintPageList = ({ type }:any) => {
 	const [calendarData, setCalendarData] = useState([]);
 	const router = useRouter();
 	const pathname = usePathname();
@@ -32,7 +32,7 @@ const MintPageList = ({ type }) => {
 	return (
 		<div>
 			<TableSection>
-				{calendarData.map((item, index) => (
+				{calendarData.map((item:any, index) => (
 					// <Card data={item} key={item._id} />
 
 					<TableCollection data={item} key={item._id} num={index} />

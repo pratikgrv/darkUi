@@ -10,7 +10,7 @@ const handleClick = () => {
    useEffect(() => {
 			
 
-			const button = document.getElementById("myButton");
+			const button:any = document.getElementById("myButton");
 			button.addEventListener("click", handleClick);
 
 			// Clean up the event listener when the component unmounts

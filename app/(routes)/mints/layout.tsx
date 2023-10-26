@@ -3,7 +3,7 @@ import React from "react";
 import { QueryClient, QueryClientProvider, useQuery } from "react-query";
 
 const queryClient = new QueryClient();
-const Mintlayout = ({ children }) => {
+const Mintlayout = ({ children }:any) => {
 	return (
 		<div>
 			<QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
