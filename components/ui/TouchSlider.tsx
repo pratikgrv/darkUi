@@ -21,7 +21,7 @@ const TouchSlider = ({ }) => {
 				Item 3
 			</div>,
 		];
-	const handleTouchMove = (e) => {
+	const handleTouchMove = (e:any) => {
 		if (touchStartX.current === null) return;
 
 		const touchEndX = e.touches[0].clientX;
