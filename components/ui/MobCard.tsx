@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 
-const MobCard = ({ data, index }) => {
+const MobCard = ({ data, index }:any) => {
 	const {
 		slugName,
 		collectionName,

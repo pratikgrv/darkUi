@@ -3,7 +3,7 @@ import React from "react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import useDebounce from "@/libs/useDebounce";
-const Search = ({ filter, setFilter }) => {
+const Search = ({ filter, setFilter }:any) => {
 	if (!filter) {
 		filter={}
 	}

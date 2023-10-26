@@ -7,7 +7,7 @@ const TouchSlider = ({ }) => {
 	const sliderRef = useRef(null);
 	const touchStartX = useRef(null);
 
-	const handleTouchStart = (e) => {
+	const handleTouchStart = (e:any) => {
 		touchStartX.current = e.touches[0].clientX;
 	};
     const items = [

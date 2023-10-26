@@ -4,7 +4,7 @@ import { inter } from "@/app/layout";
 import Link from "next/link";
 export const dynamic = "force-dynamic";
 
-const Card = ({ data }) => {
+const Card = ({ data }:any) => {
 	// console.log(data);
 	const {
 		slugName,
