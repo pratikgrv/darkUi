@@ -11,9 +11,10 @@ const MobileNav = () => {
 	// const [SearchInput, setSearchInput] = useState(false);
 
 	const searchFocus = useRef(null);
-	const refMenu = useClickAway(() => {
-		setMenu(false);
-	});
+	// const refMenu = useClickAway(() => {
+	// 	setMenu(false);
+	// })
+	 const refMenu = useRef<HTMLDivElement | null>(null);
 
 	const clickOut = () => {
 		document.body.classList.remove("unscrollable");
@@ -36,7 +37,7 @@ const MobileNav = () => {
 		<div className="md:hidden p-3  flex justify-between items-center  relative ">
 			<div className="flex">
 				<div
-					ref={refMenu}
+					ref={ref}
 					className="cursor-pointer"
 					onClick={(e) => {
 						e.stopPropagation();
