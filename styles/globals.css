@@ -2,8 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+
+@layer base {
 :root {
-	--background-color: #121212;
+	--background-color: white;
+	--text-color: #121212;
+	--link-color: rgba(255, 255, 255, 0.6);
+	--hover-color: rgb(255, 255, 255);
+	--search-bar-background: rgba(255, 255, 255, 0.08);
+	--search-bar-background-mobile: rgba(255, 255, 255, 0.756);
+	--btn-background: rgba(255, 255, 255, 0.08);
+	--btn-border: rgba(255, 255, 255, 0.08);
+	--btn-backdrop-filter: blur(16px);
+}
+ .dark{
+--background-color: black;
 	--text-color: white;
 	--link-color: rgba(255, 255, 255, 0.6);
 	--hover-color: rgb(255, 255, 255);
@@ -13,29 +26,53 @@
 	--btn-border: rgba(255, 255, 255, 0.08);
 	--btn-backdrop-filter: blur(16px);
 }
+
+}
+
+
+
 *,
 *:after,
 *:before {
 	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 body {
-	background-color: var(--background-color);
+	background-color:var(--background-color);
 	color: var(--text-color);
 	
+	
 }
+ .unscrollable {
+	overflow: hidden;
+}
+.alpha{
+	color: #121212;
+}
+/* svg{
+	color: #121212;
+	background-color: #54c962;
+	border-radius: 99999px;
+	padding: 3px;
+	
+} */
+
 .main__header {
-	/* background-color: #1b161e; */background-color: var(--background-color);
-	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+	background-color: var(--background-color);
+	/* background-color: var(--background-color); */
+	
 	top: 0;
 	width: 100%;
-	position: fixed;
+	position:sticky;
+	
 }
 .mobile__nav {
 	/* background-color: #1b161e; */background-color: var(--background-color);
 }
 .nav__links div {
-	color: var(--link-color);
-	font-weight: 400;
+	/* color: var(--link-color); */
+	font-weight: 400;color: #121212;
 	font-size: 0.9rem;
 	transition: all 0.2s ease;
 	/* Move the transition here to apply it to all .nav__links elements */
@@ -50,7 +87,7 @@ body {
 	overflow: hidden;
 }
 .search-bar:focus-within {
-	border: 1px solid rgba(255, 255, 255, 0.2);
+	border: 2px solid rgba(84, 84, 84, 0.8);
 }
 .mobile__sbi {
 	background-color: black;
@@ -549,4 +586,164 @@ border-bottom: 1px solid var(--btn-border);
 /* minf desc */
 .balance{
 	text-wrap: balance;
+}
+
+/* img _c */
+/* |||||||||||||||||||||||||||||||||||||||||||||||||||||||\ */
+.slider {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 400px;
+	height: 300px;
+	box-shadow: 3px 3px 10px rgba(21, 26, 160, 0.562);
+}
+
+.wrapper_slider {
+	overflow: hidden;
+	position: relative;
+	background: #c00b0b;
+	z-index: 1;
+}
+
+#items {
+	width: 10000px;
+	position: relative;
+
+}
+
+#items.shifting {
+	transition: left .2s ease-out;
+}
+
+.slide {
+	width: 400px;
+	height: 300px;
+	cursor: pointer;
+	float: left;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	transition: all 1s;
+	position: relative;
+	background: #FFCF47;
+}
+
+/* .................................................................. */
+.slider_card_container{
+	
+}
+
+.mob{
+	display: grid;
+	grid-template-columns: 1fr 3fr 12fr;
+	width: 100%;
+	/* max-width: 25rem; */
+}
+
+
+/* CSS */
+.button-31 {
+	background-color: #222;
+	border-radius: 4px;
+	border-style: none;
+	box-sizing: border-box;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	
+	font-size: 13px;
+	font-weight: 600;
+	line-height: 1.5;
+	margin: 0;
+	max-width: none;
+	min-height: 44px;
+	min-width: 10px;
+	outline: none;
+	overflow: hidden;
+	padding: 9px 15px 8px;
+	position: relative;
+	text-align: center;
+	text-transform: none;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+	width: 120px;
+}
+
+.button-31:hover,
+.button-31:focus {
+	opacity: .75;
+}
+
+
+
+/* 
+/////////////////////// */
+.card2 {
+grid-template-rows: repeat(8, minmax(0, 50px));
+
+}
+@media (max-width: 645px) {
+	.gridcard {
+		grid-template-rows: repeat(12, minmax(0, 1fr));
+	}
+}
+
+.trigger {
+	box-sizing: border-box;
+	position: relative;
+	width: 120px;
+	margin: 0 0 50px;
+	padding: 10px;
+	background: #bada55;
+	text-align: center;
+}
+
+.sub {
+	box-sizing: border-box;
+	position: absolute;
+	top: 100px;
+	left: 0;
+	width: 120px;
+
+	background: #4863a0;
+	color: #fff;
+	text-align: left;
+
+	/* hide element for now */
+	max-height: 0;
+	overflow: hidden;
+	opacity: 0;
+	/* make submenu not hoverable when opacity transition finished,
+   * do this instantaneously */
+	transition: max-height 0s 1.5s,
+		/* hide the submenu after 1 second, in 400ms */
+		opacity .4s 1s;
+
+	/* prevent users from showing submenu when hovering hidden element */
+	pointer-events: none;
+}
+
+/* sub elements can be hovered */
+.sub>* {
+	pointer-events: auto;
+}
+
+/* show submenu when trigger or menu itself is hovered */
+.sub:hover,
+.trigger:hover .sub {
+	max-height: 500px;
+	opacity: 1;
+	transition-delay: 0s;
+}
+
+/* give items some spacing */
+.item:not(:last-child) {
+	padding: 10px 10px 5px;
+}
+
+.item:last-child {
+	padding: 10px;
 }

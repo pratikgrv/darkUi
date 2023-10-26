@@ -6,11 +6,11 @@ const Test = () => {
 		<div>
 			<svg
 				viewBox="0 0 24 24"
-				fill="none"
+				fill="currentColor"
 				width="24"
 				height="24"
 				xmlns="http://www.w3.org/2000/svg"
-				class="sc-gueYoa diZvQV"
+				
 			>
 				<path
 					fill-rule="evenodd"

@@ -32,6 +32,7 @@ const ClientFilter = ({ initialData }) => {
 				arr.page = filter.page;
 			}
 			const filteredData = await getCalendar(arr);
+			console.log(arr);
 			setDatas( filter.page===1 ? filteredData : ((prev)=>[
 				...prev,
 	 			...filteredData,
@@ -49,7 +50,7 @@ const ClientFilter = ({ initialData }) => {
 	// 		},
 	//  });
 
-	console.log(data);
+	// console.log(data);
 
 	// useEffect(() => {
 	// 	console.log("inside useeffect")
@@ -94,17 +95,19 @@ const ClientFilter = ({ initialData }) => {
 	let btn;
 	btn = (
 		<button className={`card p-2}`} type="button" onClick={load}>
-			Load More
+			{isLoading?"loading...":"load more"}
 		</button>
 	);
-	// console.log(filter)
+	console.log(filter)
 
 	return (
 		<div className="md:w-[90%] mx-auto overflow-x-auto  ">
 			<Search filter={filter} setFilter={setFilter} />
 			<TableSection filter={filter} setFilter={setFilter} />
-
-			{data ? (
+			{datas.map((item, index) => (
+				<TableCollection data={item} key={item._id} num={index} />
+			))}
+			{/* {data ? (
 				// Render your content that depends on 'data' here
 				datas.map((item, index) => (
 					<TableCollection data={item} key={item._id} num={index} />
@@ -112,7 +115,7 @@ const ClientFilter = ({ initialData }) => {
 			) : (
 				// Render a loading indicator or some other content while data is fetching
 				<div>Loading...</div>
-			)}
+			)} */}
 
 			<div
 				className="w-full flex justify-center

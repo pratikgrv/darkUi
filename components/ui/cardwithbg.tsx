@@ -2,7 +2,10 @@ import React from "react";
 import Image from "next/image";
 const CardWithBg = () => {
 	return (
-		<div className="mob">
+		<div
+			className="mob
+		 "
+		>
 			<div className="mob_container flex flex-col p-3 max-w-[32rem] card m-3 relative">
 				<div className="flex w-full justify-between">
 					<div>
@@ -22,7 +25,7 @@ const CardWithBg = () => {
 					</div>
 					<div className="flex justify-center items-center w-14 h-14">
 						<svg
-							fill="#ffffff"
+							fill="currentColor"
 							height="32px"
 							width="32px"
 							version="1.1"
@@ -35,7 +38,7 @@ const CardWithBg = () => {
 							<g id="SVGRepo_bgCarrier" stroke-width="0"></g>
 							<g
 								id="SVGRepo_tracerCarrier"
-								stroke-linecap="round"
+								strokeLinecap="round"
 								strokeLinejoin="round"
 							></g>
 							<g id="SVGRepo_iconCarrier">
@@ -104,7 +107,7 @@ export default CardWithBg;
 // 			</div>
 // 			<div className="flex justify-center items-center w-14 h-14">
 // 				<svg
-// 					fill="#ffffff"
+// 					fill="currentColor"
 // 					height="32px"
 // 					width="32px"
 // 					version="1.1"

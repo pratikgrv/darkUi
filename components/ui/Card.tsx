@@ -32,7 +32,7 @@ const Card = ({ data }) => {
 				</div>
 
 				<div className="card_info ">
-					<div className="title_name_logo pt-5 flex justify-center  relative">
+					<div className="title_name_logo pt-5 flex pl-9  relative">
 						<div className="card_profile_outer absolute  bottom-[70%] ">
 							<div className="card_profile w-[4rem] sm:w-[5rem] h-[3.5rem] sm:h-[5rem]  rounded-xl overflow-hidden object-cover relative">
 								<Image className="z-20"

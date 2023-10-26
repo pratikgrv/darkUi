@@ -9,28 +9,33 @@ import CardSection from "@/components/CardSection";
 import Footer from "@/components/ui/Footer";
 import Accordian from "@/components/Accordian";
 import TouchSlider from "@/components/ui/TouchSlider";
+import SliderCard from "@/components/SliderCard";
+import SlideSection from "@/components/SlideSection";
+import GridCard from "@/components/GridCard";
+import Card2 from "@/components/ui/card2";
 const HomePage = async () => {
-	// const products = await getCalander({});
+	const products = await getCalander({});
 	// console.log(products)
 
 	return (
 		<div>
 			<Header />
-			{/* <TouchSlider/> */}
-			<PostFeed />
+			<SlideSection data={products} />
 			<FeedSeperator />
-
-			<CardSection
+			<GridCard />
+		
+			{/* <CardSection
 				name={"🔥Trending Mints"}
 				desc={" Most awaited mints,might be something big"}
 			>
 				<CardCollection type={true} />
-			</CardSection>
+			</CardSection> */}
+
 			<CardSection name={"🆕Recent Released"} desc={" New projects"}>
 				<CardCollection type={false} />
 			</CardSection>
 			<Accordian />
-
+			<Card2/>
 			<Footer />
 		</div>
 	);

@@ -2,28 +2,47 @@
 import React, { useState, useEffect, useRef } from "react";
 import Button from "./ui/Button";
 import PrimaryButton from "./ui/PrimaryButton";
-
+import { useClickAway } from "@uidotdev/usehooks";
+// import ClickOutside from "@/hooks/ClickOutside";
+import useClickOutside from "@/hooks/ClickOutside";
 const MobileNav = () => {
 	const [menu, setMenu] = useState(false);
 	const [searchToggle, setSearchToggle] = useState(false);
 	// const [SearchInput, setSearchInput] = useState(false);
 
 	const searchFocus = useRef(null);
-	useEffect(() => {
-		document.body.style.overflow = menu ? "hidden" : "unset";
-		if (searchToggle && searchFocus.current) {
-			// Use focus method to focus on the input when searchToggle is true
-			searchFocus.current.focus();
-		}
-	}, [searchToggle, menu]);
+	const refMenu = useClickAway(() => {
+		setMenu(false);
+	});
+
+	const clickOut = () => {
+		document.body.classList.remove("unscrollable");
+	};
+	const ref = useClickOutside(() => {
+		// Handle click outside logic here
+		setSearchToggle(false);
+		setMenu(false);
+		console.log("click outside");
+	});
+	// useEffect(() => {
+	// 	document.body.style.overflow = menu ? "hidden" : "unset";
+	// 	if (searchToggle && searchFocus.current) {
+	// 		// Use focus method to focus on the input when searchToggle is true
+	// 		searchFocus.current.focus();
+	// 	}
+	// }, [searchToggle, menu]);
 
 	return (
 		<div className="md:hidden p-3  flex justify-between items-center  relative ">
 			<div className="flex">
 				<div
+					ref={refMenu}
 					className="cursor-pointer"
-					onClick={() => {
+					onClick={(e) => {
+						e.stopPropagation();
 						setMenu(!menu);
+
+						// document.body.classList.add("unscrollable");
 					}}
 				>
 					<svg
@@ -31,9 +50,8 @@ const MobileNav = () => {
 						height="21px"
 						viewBox="0 0 24 24"
 						xmlns="http://www.w3.org/2000/svg"
-						id="menu-alt"
-						className="icon glyph"
-						fill="#ffffff"
+	
+						fill="currentColor"
 					>
 						<g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
 						<g
@@ -61,6 +79,7 @@ const MobileNav = () => {
 					}`}
 					onClick={(e) => {
 						e.stopPropagation();
+						// e.stopPropagation();
 					}}
 				>
 					<div className="relative flex flex-col justify-between items-center mobile__nav h-full">
@@ -70,7 +89,7 @@ const MobileNav = () => {
 									width="21px"
 									height="21px"
 									viewBox="0 0 24 24"
-									fill="none"
+									fill="currentColor"
 									xmlns="http://www.w3.org/2000/svg"
 									stroke="#f2f2f2"
 								>
@@ -129,7 +148,7 @@ const MobileNav = () => {
 									width="21px"
 									height="21px"
 									viewBox="0 0 24 24"
-									fill="none"
+									fill="currentColor"
 									xmlns="http://www.w3.org/2000/svg"
 								>
 									<g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
@@ -160,7 +179,7 @@ const MobileNav = () => {
 							</div>
 							<div className="p-3 flex gap-2 justify-start items-center">
 								<svg
-									fill="#ffffff"
+									fill="currentColor"
 									width="21px"
 									height="21px"
 									viewBox="0 0 32 32"
@@ -188,7 +207,7 @@ const MobileNav = () => {
 							</div>
 							<div className="p-3 flex gap-2 justify-start items-center">
 								<svg
-									fill="#ffffff"
+									fill="currentColor"
 									width="21px"
 									height="21px"
 									viewBox="0 0 32 32"
@@ -231,10 +250,10 @@ const MobileNav = () => {
 					</div>
 				</div>
 			</div>
-			<div className="text-xl font-bold ">Exporrr.</div>
+			<div className="text-xl font-bold ">Zenl</div>
 			<div
 				className="cursor-pointer w-7 h-7 flex items-center justify-center "
-				onClick={() => {
+				onClick={(e) => {
 					setSearchToggle(!searchToggle);
 				}}
 			>
@@ -243,7 +262,7 @@ const MobileNav = () => {
 						width="23px"
 						height="23px"
 						viewBox="0 0 24 24"
-						fill="none"
+						fill="currentColor"
 						xmlns="http://www.w3.org/2000/svg"
 					>
 						<g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
@@ -256,13 +275,13 @@ const MobileNav = () => {
 							{" "}
 							<path
 								d="M8.00386 9.41816C7.61333 9.02763 7.61334 8.39447 8.00386 8.00395C8.39438 7.61342 9.02755 7.61342 9.41807 8.00395L12.0057 10.5916L14.5907 8.00657C14.9813 7.61605 15.6144 7.61605 16.0049 8.00657C16.3955 8.3971 16.3955 9.03026 16.0049 9.42079L13.4199 12.0058L16.0039 14.5897C16.3944 14.9803 16.3944 15.6134 16.0039 16.0039C15.6133 16.3945 14.9802 16.3945 14.5896 16.0039L12.0057 13.42L9.42097 16.0048C9.03045 16.3953 8.39728 16.3953 8.00676 16.0048C7.61624 15.6142 7.61624 14.9811 8.00676 14.5905L10.5915 12.0058L8.00386 9.41816Z"
-								fill="#ffffff"
+								fill="currentColor"
 							></path>{" "}
 							<path
 								fillRule="evenodd"
 								clipRule="evenodd"
 								d="M23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12ZM3.00683 12C3.00683 16.9668 7.03321 20.9932 12 20.9932C16.9668 20.9932 20.9932 16.9668 20.9932 12C20.9932 7.03321 16.9668 3.00683 12 3.00683C7.03321 3.00683 3.00683 7.03321 3.00683 12Z"
-								fill="#ffffff"
+								fill="currentColor"
 							></path>{" "}
 						</g>
 					</svg>
@@ -271,7 +290,7 @@ const MobileNav = () => {
 						width="23px"
 						height="23px"
 						viewBox="0 0 24 24"
-						fill="none"
+						fill="currentColor"
 						xmlns="http://www.w3.org/2000/svg"
 					>
 						<g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
@@ -284,26 +303,26 @@ const MobileNav = () => {
 							{" "}
 							<path
 								d="M10.77 18.3C9.2807 18.3 7.82485 17.8584 6.58655 17.031C5.34825 16.2036 4.38311 15.0275 3.81318 13.6516C3.24325 12.2757 3.09413 10.7616 3.38468 9.30096C3.67523 7.84029 4.39239 6.49857 5.44548 5.44548C6.49857 4.39239 7.84029 3.67523 9.30096 3.38468C10.7616 3.09413 12.2757 3.24325 13.6516 3.81318C15.0275 4.38311 16.2036 5.34825 17.031 6.58655C17.8584 7.82485 18.3 9.2807 18.3 10.77C18.3 11.7588 18.1052 12.738 17.7268 13.6516C17.3484 14.5652 16.7937 15.3953 16.0945 16.0945C15.3953 16.7937 14.5652 17.3484 13.6516 17.7268C12.738 18.1052 11.7588 18.3 10.77 18.3ZM10.77 4.74999C9.58331 4.74999 8.42327 5.10189 7.43657 5.76118C6.44988 6.42046 5.68084 7.35754 5.22672 8.45389C4.77259 9.55025 4.65377 10.7566 4.88528 11.9205C5.11679 13.0844 5.68824 14.1535 6.52735 14.9926C7.36647 15.8317 8.43556 16.4032 9.59945 16.6347C10.7633 16.8662 11.9697 16.7474 13.0661 16.2933C14.1624 15.8391 15.0995 15.0701 15.7588 14.0834C16.4181 13.0967 16.77 11.9367 16.77 10.75C16.77 9.15869 16.1379 7.63257 15.0126 6.50735C13.8874 5.38213 12.3613 4.74999 10.77 4.74999Z"
-								fill="#ffffff"
+								fill="currentColor"
 							></path>{" "}
 							<path
 								d="M20 20.75C19.9015 20.7504 19.8038 20.7312 19.7128 20.6934C19.6218 20.6557 19.5392 20.6001 19.47 20.53L15.34 16.4C15.2075 16.2578 15.1354 16.0697 15.1388 15.8754C15.1422 15.6811 15.221 15.4958 15.3584 15.3583C15.4958 15.2209 15.6812 15.1422 15.8755 15.1388C16.0698 15.1354 16.2578 15.2075 16.4 15.34L20.53 19.47C20.6704 19.6106 20.7493 19.8012 20.7493 20C20.7493 20.1987 20.6704 20.3893 20.53 20.53C20.4608 20.6001 20.3782 20.6557 20.2872 20.6934C20.1962 20.7312 20.0985 20.7504 20 20.75Z"
-								fill="#ffffff"
+								fill="currentColor"
 							></path>{" "}
 						</g>
 					</svg>
 				)}
-			
-			</div>	{searchToggle ? (
-					<input
-						ref={searchFocus}
-						className=" mobile__sbi absolute top-[8px] left-2 w-[83%] sm:w-[88%]  rounded-2xl p-[7px] border-none outline-none  text-sm z-50"
-						type="text"
-						placeholder="Search here"
-					/>
-				) : (
-					''
-				)}
+			</div>{" "}
+			{searchToggle ? (
+				<input
+					ref={searchFocus}
+					className=" mobile__sbi absolute top-[8px] left-2 w-[83%] sm:w-[88%]  rounded-2xl p-[7px] border-none outline-none  text-sm z-50"
+					type="text"
+					placeholder="Search here"
+				/>
+			) : (
+				""
+			)}
 		</div>
 	);
 };

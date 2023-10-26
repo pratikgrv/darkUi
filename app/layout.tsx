@@ -4,6 +4,8 @@ import NextTopLoader from "nextjs-toploader";
 
 import "@/styles/globals.css";
 import { Suspense } from "react";
+import { ThemeProvider } from "@/components/ContextThemeProvider";
+
 export const inter = Inter({ subsets: ["latin"] });
 const outfit = Outfit({
 	subsets: ["latin"],
@@ -22,10 +24,12 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en">
+		<html lang="en" suppressHydrationWarning>
 			<body className={outfit.className}>
+				 <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
 				<NextTopLoader />
 				{children}
+				</ThemeProvider>
 			</body>
 		</html>
 	);

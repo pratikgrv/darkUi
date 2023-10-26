@@ -22,7 +22,7 @@ const MintPage = async ({
 		// sort:sort
 	});
 
-	// console.log(searchParams.search);
+	// console.log(initialData);
 	return (
 		<>
 			<Header />

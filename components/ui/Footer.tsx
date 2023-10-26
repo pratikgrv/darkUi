@@ -6,7 +6,7 @@ const Footer = () => {
 		<span>
 			<span className="footer flex flex-col md:flex-row p-3 my-7 mx-4">
 				<span className="logo_side flex-grow p-9 text-3xl font-extrabold">
-					Exporrr.
+					Zenl
 				</span>
 				<span className="flex flex-grow mx-3">
 					<span className="resouces flex-grow">

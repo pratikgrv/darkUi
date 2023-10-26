@@ -31,7 +31,7 @@ const Search = ({ filter, setFilter }) => {
 	// };
 
 	return (
-		<div className="search-bar flex rounded-full text-gray-50 tracking-wide overflow-hidden h-10 w-[25rem]">
+		<div className="search-bar flex rounded-xl text-gray-50 tracking-wide overflow-hidden h-10 w-[25rem]">
 			<div className="search-icon flex items-center px-3">
 				<svg
 					width="18px"
