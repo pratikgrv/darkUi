@@ -47,7 +47,7 @@ const SliderCard = ({ data }:any) => {
 				<div className="sc_2 w-full md:flex-1 my-auto h-full  ">
 					<div className="relative min-w-[5rem] max-w-[25rem] sm:max-w-[32rem] md:aspect-square aspect-video  mx-auto overflow-hidden">
 						<Image
-							className="md:rounded-lg object-cover"
+							className=" rounded-md md:rounded-lg object-cover"
 							src={imageUrl}
 							fill
 							alt=""
