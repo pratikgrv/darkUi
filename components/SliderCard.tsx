@@ -16,10 +16,10 @@ const SliderCard = ({ data }:any) => {
 	} = data;
 
 	return (
-		<div className="w-full px-3 sm:px-5 mb-12">
-			<div className="slider_card_container relative p-7 md:p-20 flex sm:flex-row flex-col-reverse   gap-6   overflow-hidden">
+		<div className="w-full   mb-12">
+			<div className="slider_card_container  relative flex sm:flex-row flex-col-reverse   gap-6   overflow-hidden">
 				{/* <Image className="rounded-2xl object-cover opacity-80 min-w-[15rem] -z-40" src={backgroundUrl} fill alt="" /> */}
-				<div className="sc_1 w-full md:flex-1 my-auto ">
+				<div className="sc_1 w-full md:flex-1 my-auto px-3 sm:px-5">
 					<div className="flex flex-col md:gap-3 gap-2  md:text-left">
 						<div className="">
 							<span className="rounded-3xl my-2 card px-[7px] py-[3px]">
@@ -44,10 +44,10 @@ const SliderCard = ({ data }:any) => {
 					</div>
 				</div>
 
-				<div className="sc_2 w-full md:flex-1 my-auto h-full ">
-					<div className="relative min-w-[5rem] max-w-[25rem] sm:max-w-[32rem] aspect-square  mx-auto overflow-hidden">
+				<div className="sc_2 w-full md:flex-1 my-auto h-full  ">
+					<div className="relative min-w-[5rem] max-w-[25rem] sm:max-w-[32rem] md:aspect-square aspect-video  mx-auto overflow-hidden">
 						<Image
-							className="rounded-lg object-cover"
+							className="md:rounded-lg object-cover"
 							src={imageUrl}
 							fill
 							alt=""

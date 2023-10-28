@@ -35,7 +35,7 @@ const Footer = () => {
 						</span>
 					</span>
 					<span className="follow  flex-grow">
-						<span>Follow</span>
+						<span className="font-bold">Follow</span>
 						<span className="my-3 gap-3 flex flex-col text-sm opacity-75 ">
 							<span>
 								<Link href={""}>Twitter</Link>
